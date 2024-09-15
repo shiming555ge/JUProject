@@ -1,0 +1,62 @@
+.regForm{
+    position: absolute;
+    display: block;
+
+    width: 100%;
+    height: 70%;
+    top:15%;
+    font-size: 1.5rem;
+
+    border-bottom: 1px solid rgba(146, 138, 151, 0.6);
+}
+
+.regForm>input{
+    position: absolute;
+    display: inline-block;
+
+    width: 80%;
+    height: 16%;
+
+    left: 50%;
+    transform: translatex(-50%);
+
+    border-color: rgba(146, 138, 151, 0.6);
+    border-radius: 3px;
+    border-width: 1.5px;
+    background-color: rgba(251, 240, 230);
+
+    font-family: "微软雅黑 Light";
+    font-size: 1.2rem;
+}
+.regForm>input:first-child{
+    top: 8%;
+}
+.regForm>input:nth-child(2){
+    top: 32%;
+}
+.regForm>input:nth-child(3){
+    top: 56%;
+}
+.regForm>input:last-child{
+    top: 80%;
+}
+.moreAction{
+    position: absolute;
+    top: 90%;
+
+    width: 100%;
+}
+.moreAction>*{
+    position: absolute;
+    font-size: 1rem;
+    color: rgba(248, 95, 115, 0.8);
+
+    text-decoration: underline;
+
+}
+.moreAction>.regist{
+    right: 1rem;
+}
+.moreAction>.forget{
+    left: 1rem;
+}

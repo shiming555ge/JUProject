@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/static/script/jquery.js"></script>
+    {{ if eq .mod 0}}
+    <title>修改帖子</title>
+    <script>
+        const url = "/api/student/post"
+        const type="put"
+        const id= eval({{ .id }})
+        $(document).ready(()=>{
+            $("#editBox").val("{{ .content }}")
+        })
+        const loc = "/user"
+    </script>
+    {{ else if eq .mod 1 }}
+    <title>编写帖子</title>
+    <script>
+        const url = "/api/student/post"
+        const type="post"
+        const id = 0
+        const loc = "/index"
+    </script>
+    {{  else }}
+    <title>举报帖子</title>
+    <script>
+        const url = "/api/student/report-post"
+        const type="post"
+        const id = {{ .id }}
+        const loc = "/index"
+    </script>
+    {{ end }}
+    <link rel="shortcut icon" href="/static/src/fav.ico">
+    <link type="text/css" rel="stylesheet" href="/static/style/mainPage.css">
+    <style>
+        .mainPage{
+            width: 100vmin;
+            height: 100%;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+        }
+        #editBox{
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 80%;
+            font-size: 1rem;
+            font-family: "song";
+
+            resize: none;
+        }
+        .mainPage>.column{
+            display: inline-block;
+            position: absolute;
+            top: calc(90% - 2rem);
+            bottom: calc((20% - 8rem) / 2);
+            width: 5rem !important;
+        }
+        .mainPage>.column>.title{
+            left: 1rem !important;
+        }
+        .send{
+            left: 1rem;
+        }
+        .cancel{
+            left: 7rem;
+        }
+        .cancel>.title{
+            left: 1rem !important;
+        }
+    </style>
+    <script>
+        $(document).ready(()=>{
+            $(".send").click(()=>{
+                $.ajax({
+                    url: url,
+                    type: type,
+                    data:JSON.stringify({
+                        content: $("#editBox").val(),
+                        reason:  $("#editBox").val(),
+                        user_id: 0,
+                        post_id: parseInt(id)
+                    }),
+                    dataType: "JSON",
+                    contentType: "application/json",
+                    success:(data)=>{
+                        alert("发送成功")
+                        window.location.href = "/index"
+                    },
+                    error: function (data) {
+                        let d = eval("("+data.responseText+")")
+                        alert(d.msg)
+                    }
+                })
+            })
+            $(".cancel").click(()=>{
+                window.location.href = loc
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="mainPage">
+        <textarea id="editBox"></textarea>
+        <div class="send column">
+            <div class="title">发送</div>
+        </div>
+        <div class="cancel column">
+            <div class="title">取消</div>
+        </div>
+    </div>
+</body>
+</html>

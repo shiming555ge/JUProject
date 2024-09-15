@@ -1,0 +1,20 @@
+.welcome{
+    left: 5rem !important;
+    top: 30% !important;
+
+    overflow: hidden !important;
+}
+.welcome>h1{
+    display: inline-block;
+    font-size: 4rem;
+    font-family: song;
+    color: rgba(40, 60, 99, 0.8);
+}
+.welcome>span{
+    white-space: nowrap;
+    left:17rem;
+    font-size: 5rem;
+    font-weight: bolder;
+    font-family: jl;
+    color: rgba(248, 95, 115, 0.8);
+}

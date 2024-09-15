@@ -1,0 +1,140 @@
+.card{
+    position: fixed;
+    right: 2vw;
+    top:50%;
+    transform:translateY(-50%);
+
+    background-color: rgb(251, 232, 211);
+    border-radius: 5px;
+}
+.card>.topNav{
+    position: absolute;
+    width: 100%;
+    height: 15%;
+
+    background-color: rgba(146, 138, 151, 0.8);
+    border-radius: 5px 5px 0 0;
+}
+.card>.topNav>h1{
+    position: absolute;
+    color: rgba(255, 255, 255, 0.8);
+    margin:0;
+    left: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-family: "song";
+    font-weight: 1000;
+    letter-spacing: 8px;
+}
+
+.card>.operator{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.operator>img{
+    position: absolute;
+    width: 2rem;
+    opacity: 0.08;
+    user-select: none;
+    transition-duration: 0.4s;
+}
+.operator>img:hover{
+    opacity: 1;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.card>.operator>.upA{
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 5%);
+}
+.card>.operator>.downA{
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 5%);
+}
+.card>.operator>.leftA{
+    left: 0;
+    top: 50%;
+    transform: translate(-15%, -50%);
+}
+.card>.operator>.rightA{
+    right: 0;
+    top: 50%;
+    transform: translate(15%, -50%);
+}
+.card>.operator>.subscribe{
+    display: none;
+
+    left: 50%;
+    top: 50%;
+    opacity: 0.3;
+    transform: translate(50%, -50%);
+}
+.card>.operator>.subscribe:hover{
+    opacity: 0.8;
+    content: url("/static/src/subscribing.png");
+}
+
+.card>.operator>.report{
+    display: none;
+
+    top: 50%;
+    left: 50%;
+    opacity: 0.3;
+    transform: translate(-150%, -50%);
+ }
+.card>.operator>.report:hover{
+    opacity: 0.8;
+    content: url("/static/src/reporting.png");
+}
+
+
+.card>.textBox{
+    position: absolute;
+    z-index: 1;
+    top: 2rem;
+    right: 2rem;
+    left: 2rem;
+}
+.card>.textBox{
+    font-family: "微软雅黑 Light";
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.card>.commentBox{
+    position: absolute;
+
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@media screen and (orientation:portrait) {
+    .card {
+        width: 40vw;
+        height: 60vw;
+    }
+    .card>.operator>img{
+        width: 6vw;
+    }
+}
+@media screen and (orientation: landscape) {
+    .card {
+        width: 50vh;
+        height: 75vh;
+    }
+    .card>.operator>img{
+        width: 6vh;
+    }
+}

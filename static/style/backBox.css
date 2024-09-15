@@ -1,0 +1,26 @@
+.backBox{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    z-index:  -1;
+}
+.backBox>.track{
+    position: absolute;
+    font-family: "jl";
+    color: rgba(146, 138, 151, 0.8);
+    font-size: 2rem;
+    right: 0;
+    white-space: nowrap;
+}
+
+@keyframes trackScroll {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        right: 100%;
+    }
+}

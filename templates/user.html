@@ -1,0 +1,114 @@
+{{ define "user.html" }}
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户</title>
+    <link rel="shortcut icon" href="static/src/fav.ico">
+    <link type="text/css" rel="stylesheet" href="static/style/media.css">
+    <link type="text/css" rel="stylesheet" href="static/style/user.css">
+    <link type="text/css" rel="stylesheet" href="static/style/mainPage.css">
+    <link type="text/css" rel="stylesheet" href="static/style/card.css">
+    <style>
+        .optList{
+            width: 15%;
+        }
+        .column>.title{
+            font-size: 4vw;
+            margin: auto;
+        }
+        .optBox{
+            position: absolute;
+            left: calc(15% + 3rem);
+            top: calc(10vmin + 1.5rem);
+            height: calc(100% - 10vmin - 2.5rem);
+        }
+
+        @media screen and (orientation: landscape) {
+            .optBox{
+                width: calc(85% - 4rem - 50vh);
+            }
+        }
+        @media screen and (orientation:portrait) {
+            .optBox{
+                width: calc(85% - 4rem - 40vw);
+            }
+        }
+        .myInfo>.exitBtn{
+            position: absolute;
+            width: 7rem;
+            right: 1rem;
+            cursor: pointer !important;
+        }
+        .myInfo>.exitBtn>.title {
+            left: 0.5rem !important;
+        }
+    </style>
+    <script>
+        let pages = []
+        let page = 0
+        const admin = {{ .admin }}
+    </script>
+    <script src="static/script/jquery.js"></script>
+    <script src="static/script/card.js"></script>
+    <script src="static/script/userInit.js"></script>
+</head>
+<body>
+    <img class="userBtn" src="static/src/user.png" style="right: 1rem;" title="点击返回主页" onclick="window.location.href='/index'">
+    <div class="optList mainPage">
+        <div class="column columnSelected" data-page=".myPosts">
+            <div class="title">我的帖子</div>
+        </div>
+        {{ if eq .admin 2 }}
+        <div class="column" data-page=".adminReport">
+            <div class="title">审批举报</div>
+        </div>
+        {{ end }}
+        <div class="column" data-page=".myReport">
+            <div class="title">我的举报</div>
+        </div>
+        <div class="column" data-page=".mySubscribe">
+            <div class="title">我的收藏</div>
+        </div>
+        <div class="column" data-page=".myInfo">
+            <div class="title">账户信息</div>
+        </div>
+    </div>
+    <div class="myPosts optBox mainPage"></div>
+    {{ if eq .admin 2 }}
+    <div class="adminReport optBox mainPage"></div>
+    {{ end }}
+    <div class="myReport optBox mainPage"></div>
+    <div class="mySubscribe optBox mainPage"></div>
+    <div class="myInfo optBox mainPage">
+        <div class="column user_id">
+            <div class="title">uid: </div>
+        </div>
+        <div class="column username">
+            <div class="title">账户名: </div>
+        </div>
+        <div class="column name">
+            <div class="title">昵称: </div>
+        </div>
+        <div class="column password">
+            <div class="title">密码: </div>
+        </div>
+        <div class="exitBtn column">
+            <div class="title">退出登录</div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="operator">
+            <img class="leftA" src="static\src\left_arrow.png" title="上一页">
+            <img class="rightA" src="static\src\right_arrow.png" title="下一页">
+            <img class="subscribe" src="static\src\subscribe.png" title="收藏">
+            <img class="report" src="static\src\report.png" title="举报">
+        </div>
+        <div class="textBox"></div>
+        <div class="commentBox">
+            评论区<br>
+            在做了在做了
+        </div>
+    </div>
+</body>
+
+{{ end }}

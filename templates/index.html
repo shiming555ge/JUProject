@@ -1,0 +1,39 @@
+{{ define "index.html" }}
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="shortcut icon" href="static/src/fav.ico">
+    <link type="text/css" rel="stylesheet" href="static/style/media.css">
+    <link type="text/css" rel="stylesheet" href="static/style/card.css">
+    <link type="text/css" rel="stylesheet" href="static/style/mainPage.css">
+    <link type="text/css" rel="stylesheet" href="static/style/user.css">
+    <script>
+        let pages = []
+        let page = 0
+    </script>
+    <script src="static/script/jquery.js"></script>
+    <script src="static/script/column.js"></script>
+    <script src="static/script/card.js"></script>
+    <script src="static/script/indexInit.js"></script>
+</head>
+<body>
+    <div class="mainPage"></div>
+    <div class="card">
+        <div class="operator">
+            <img class="upA" src="static\src\up_arrow.png">
+            <img class="downA" src="static\src\down_arrow.png">
+            <img class="leftA" src="static\src\left_arrow.png" title="上一页">
+            <img class="rightA" src="static\src\right_arrow.png" title="下一页">
+            <img class="subscribe" src="static\src\subscribe.png" title="收藏">
+            <img class="report" src="static\src\report.png" title="举报">
+        </div>
+        <div class="textBox"></div>
+        <div class="commentBox">
+            评论区<br>
+            在做了在做了
+        </div>
+    </div>
+    <img class="userBtn" src="static\src\user.png" style="right: 1rem;" onclick="window.location.href='/user'" title="点击前往用户主页">
+    <img class="userBtn" src="static\src\edit.png" style="right: 1rem;top: 88%;" onclick="window.location.href='/create-post'" title="点击创建帖子">
+</body>
+{{ end }}

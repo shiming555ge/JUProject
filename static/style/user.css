@@ -1,0 +1,21 @@
+.userBtn{
+    position: absolute;
+    top: 0.5rem;
+
+    cursor: pointer;
+
+    border: 0.2rem rgba(248, 95, 115, 0.2) solid;
+}
+
+@media screen and (orientation:portrait) {
+    .userBtn {
+        width: 10vw;
+        border-radius: 5vw;
+    }
+}
+@media screen and (orientation: landscape) {
+    .userBtn {
+        width: 10vh;
+        border-radius: 10vh;
+    }
+}

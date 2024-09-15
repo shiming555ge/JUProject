@@ -1,0 +1,79 @@
+.logForm{
+    position: absolute;
+    display: block;
+
+    width: 100%;
+    height: 70%;
+    top:15%;
+    font-size: 1.5rem;
+
+    border-bottom: 1px solid rgba(146, 138, 151, 0.6);
+}
+
+.logForm>input{
+    position: absolute;
+    display: inline-block;
+
+    width: 80%;
+    height: 16%;
+
+    left: 50%;
+    transform: translatex(-50%);
+
+    border-color: rgba(146, 138, 151, 0.6);
+    border-radius: 3px;
+    border-width: 1.5px;
+    background-color: rgba(251, 240, 230);
+
+    font-family: "微软雅黑 Light";
+    font-size: 1.2rem;
+}
+.logForm>input:first-child{
+    top: 12%;
+}
+.logForm>input:nth-child(2){
+    top: 36%;
+}
+.logForm>input:nth-child(3){
+    top: 64%;
+}
+
+#check{
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    top: 86%;
+    right: 7.5rem;
+    left: auto;
+    transform: translate(0);
+}
+
+.logForm>span{
+    top: 86%;
+    position: absolute;
+    right: 1.5rem;
+    font-size: 1rem;
+    color: rgba(40, 60, 99, 0.8);
+}
+
+.moreAction{
+    position: absolute;
+    top: 90%;
+
+    width: 100%;
+}
+.moreAction>*{
+    position: absolute;
+    font-size: 1rem;
+    color: rgba(248, 95, 115, 0.8);
+
+    text-decoration: underline;
+
+}
+.moreAction>.regist{
+    right: 1rem;
+    cursor: pointer;
+}
+.moreAction>.forget{
+    left: 1rem;
+}

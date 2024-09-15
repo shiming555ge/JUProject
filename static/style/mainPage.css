@@ -1,0 +1,83 @@
+.mainPage{
+    position: fixed;
+    top: 4%;
+    bottom: 0;
+    left: 4%;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.mainPage>.column{
+    background-color: rgba(251, 232, 211, 0.5);
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+
+    position: relative;
+    width: calc(100% - 1rem);
+    height: 4rem;
+    margin-bottom: 1rem;
+
+    transition-duration: 0.1s;
+}
+.mainPage>.column:hover{
+    border: 0.1rem solid rgba(146, 138, 151, 0.2) ;
+}
+.mainPage>.column>*{
+    position: relative;
+    float: right;
+    margin-right: 1rem;
+    top: 50%;
+    display: inline;
+
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+.mainPage>.column>.title{
+    position: absolute !important;
+    left: 3%;
+    transform: translateY(-50%);
+
+    font-size: 1.5rem !important;
+    color: rgba(40, 60, 99, 0.8) !important;
+}
+.mainPage>.column>.time{
+    transform: translateY(50%);
+}
+.mainPage>.column>.author{
+    transform: translateY(50%);
+}
+.mainPage>.column>.postBtn{
+    display: none;
+    position: absolute;
+    width: 1.5rem;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    cursor: pointer;
+}
+.mainPage>.column>.reason{
+    display: none;
+    position: absolute !important;
+    left: 3%;
+    transform: translateY(-50%);
+
+    font-size: 1.5rem !important;
+    color: rgba(40, 60, 99, 0.8) !important;
+}
+
+.columnSelected{
+    border: 0.1rem solid rgba(248, 95, 115, 0.3) !important;
+}
+
+@media screen and (orientation: portrait) {
+    .mainPage {
+        right: 44vw;
+    }
+}
+@media screen and (orientation: landscape) {
+    .mainPage {
+        right: calc(50vh + 4vw);
+    }
+}
